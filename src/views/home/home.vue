@@ -1,8 +1,7 @@
 <template>
   <div class="home">
     <div class="top">
-      <div class="box">
-        <!-- <img src="./404.gif" alt=""> -->
+      <div class="box" @click="jump">
       </div>
     我是首页
     </div>
@@ -21,7 +20,16 @@ export default {
     getDaysDiffBetweenDates(dateInitial, dateFinal){
       console.log(dateInitial, dateFinal)
      this.day = (dateFinal - dateInitial) / (1000 * 3600 * 24)
-    }    
+    },
+    jump(){
+      var id = "1111";
+      this.$router.push({
+        name: 'luyou',
+        params: {
+        id: id
+      }
+})
+    }   
   },
   mounted () {
     this.getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22'))

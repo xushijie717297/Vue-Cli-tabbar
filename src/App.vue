@@ -1,56 +1,11 @@
 <template>
   <div id="app">
     <router-view></router-view>
-	<!-- <div class="box" style="height: 50px;width: 100%"></div> -->
-    <tab-bar>
-      <tab-bar-item path="/home">
-        <img slot="item-icon" src="./assets/img/iconfont/home.png" alt="" />
-        <img
-          slot="item-icon-active"
-          src="./assets/img/iconfont/home_active.png"
-          alt=""
-        />
-        <div slot="item-text">首页</div>
-      </tab-bar-item>
-      <tab-bar-item path="/category">
-        <img slot="item-icon" src="./assets/img/iconfont/category.png" alt="" />
-        <img
-          slot="item-icon-active"
-          src="./assets/img/iconfont/category_active.png"
-          alt=""
-        />
-        <div slot="item-text">分类</div>
-      </tab-bar-item>
-      <tab-bar-item path="/shopcart">
-        <img slot="item-icon" src="./assets/img/iconfont/shopcart.png" alt="" />
-        <img
-          slot="item-icon-active"
-          src="./assets/img/iconfont/shopcart_active.png"
-          alt=""
-        />
-        <div slot="item-text">购物车</div>
-      </tab-bar-item>
-      <tab-bar-item path="/profile">
-        <img slot="item-icon" src="./assets/img/iconfont/profile.png" alt="" />
-        <img
-          slot="item-icon-active"
-          src="./assets/img/iconfont/profile_active.png"
-          alt=""
-        />
-        <div slot="item-text">我的</div>
-      </tab-bar-item>
-    </tab-bar>
-  </div>
+    </div>
 </template>
 <script>
-import TabBar from "./components/tabbar/tabbar";
-import TabBarItem from "./components/tabbar/tabbarItem";
 export default {
   name: "App",
-  components: {
-    TabBar,
-    TabBarItem
-  },
     beforeCreate(){
       let count = 0;
       let imgs = [
@@ -79,6 +34,16 @@ export default {
 </script>
 <style>
 @import "./assets/css/base.css";
+/* html{ */
+      /* filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    -webkit-filter: grayscale(.1); */
+/* } */
 .active {
   color: red;
 }
@@ -100,5 +65,7 @@ html,body,#app{
     width: 0px;  
     height: 0px;  
 }
-
+li{
+  list-style: none;
+}
 </style>

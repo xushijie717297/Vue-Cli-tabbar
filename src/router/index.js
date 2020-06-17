@@ -21,27 +21,41 @@ export default new Router({
     },
     {
       path:'/',
-      redirect: '/home'
+      name:'menu',
+      redirect: "/home",
+      component: resolve => require(['@/views/menu/menu'],resolve),
+      children:[
+        {
+          path:'/home',
+          name:'home',
+          component: home
+        },
+        {
+          path:'/category',
+          name:'category',
+          component: resolve => require(['@/views/category/category'],resolve),
+        },
+        {
+          path:'/profile',
+          name:'profile',
+          component: resolve => require(['@/views/profile/profile'],resolve),
+        },
+        {
+          path:'/shopcart',
+          name:'shopcart',
+          component: resolve => require(['@/views/shopcart/shopcart'],resolve),
+        },
+      ]
     },
+    {//测试路由传参
+      path:'/luyou',
+      name:'luyou',
+      component: resolve => require(['@/views/home/luyou'],resolve),
+    },   
     {
-      path:'/home',
-      name:'home',
-      component: home
-    },
-    {
-      path:'/category',
-      name:'category',
-      component: resolve => require(['@/views/category/category'],resolve),
-    },
-    {
-      path:'/profile',
-      name:'profile',
-      component: resolve => require(['@/views/profile/profile'],resolve),
-    },
-    {
-      path:'/shopcart',
-      name:'shopcart',
-      component: resolve => require(['@/views/shopcart/shopcart'],resolve),
+      path:'/warn',
+      name:'warn',
+      component: resolve => require(['@/views/warn/warn'],resolve),
     },
   ]
 })
